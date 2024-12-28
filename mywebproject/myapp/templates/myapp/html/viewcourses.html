@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%include 'myapp/common/common_css.html'%}
+</head>
+<body>
+    {%include 'myapp/common/commonheader.html'%}
+  <h1 style="text-align: center;">OUR COURSES</h1>
+    <!-- code start -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th scope="col">coursename</th>
+            <th scope="col">fees</th>
+            <th scope="col">duration</th>
+            <!-- <th scope="col">Handle</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          {%for c in course_key%}
+<tr>
+    <td><img src="/media/{{c.course_pic}}" style="width:100px;height:100px;"> </td>
+    <td>{{c.course_name}}</td>
+    <td>{{c.course_fees}}</td>
+    <td>{{c.course_duration}}</td>
+</tr>
+
+          {%endfor%}
+        </tbody>
+      </table>
+    <!-- code ends -->
+
+
+{%include 'myapp/common/common_js.html'%}  
+</body>
+</html>
